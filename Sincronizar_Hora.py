@@ -26,7 +26,7 @@ def cambiar_hora_win7():
         print("Conectando a servidor NTP...")
         cliente = ntplib.NTPClient()
         
-        respuesta = cliente.request("172.17.111.1", timeout=10, version=3)
+        respuesta = cliente.request("You server", timeout=10, version=3)
         hora_ntp = datetime.fromtimestamp(respuesta.tx_time, timezone.utc)
         hora_local = hora_ntp.astimezone()
         
@@ -45,9 +45,9 @@ def cambiar_hora_win7():
 
 def cambiar_hora():
     try:
-        print("Conectando al servidor NTP 172.17.111.1...")
+        print("Conectando al servidor NTP You Server...")
         ntp_client = ntplib.NTPClient()
-        res = ntp_client.request('172.17.111.1')
+        res = ntp_client.request('You Server')
         hora_ntp = datetime.fromtimestamp(res.tx_time, timezone.utc)
         hora_local = hora_ntp.astimezone()
         
